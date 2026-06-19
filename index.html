@@ -1,373 +1,51 @@
-Hero section with Buy Now and Wholesale
-1. Product pages:
-    * 75ml — $2
-    * 100ml — $3
-    * 150ml — $4
-1. Packs:
-    * Travel Pack — $7.99
-    * Pocket Pack — $13.99
-    * Gym Pack — $14.99
-    * Family Pack — $15.99
-1. Wholesale page
-2. Custom-branded water page
-3. Stripe checkout (Apple Pay, Google Pay, cards, Klarna)
-4. Reviews
-5. Founder story
-6. Contact page
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Water Friendly — Pocket-Friendly Natural Spring Water</title>
-<meta name="description" content="Premium Canadian spring water designed to fit in your purse, pocket, gym bag, and everyday life. Retail, wholesale, events and custom-branded water." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600&family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+Create a luxury ecommerce landing page for The Water Friendly.
 
-<style>
-:root{
-  --ink:#120e0a;
-  --brown:#2a1f18;
-  --cream:#f6efe5;
-  --paper:#fffaf2;
-  --copper:#c7895d;
-  --rose:#d8aa86;
-  --muted:#7c6f63;
-  --line:rgba(18,14,10,.14);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.wrap{width:min(1180px,calc(100% - 36px));margin:auto}
-h1,h2,h3,.logo{font-family:Fraunces,Georgia,serif}
-.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);font-weight:800}
-.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 24px;font-weight:800;border:1px solid transparent;transition:.25s;cursor:pointer}
-.btn:hover{transform:translateY(-2px)}
-.btn.primary{background:var(--copper);color:var(--ink)}
-.btn.dark{background:var(--ink);color:var(--cream)}
-.btn.ghost{border-color:rgba(255,255,255,.35);color:var(--cream)}
+Brand:
+- Premium Canadian natural spring water
+- Black, cream and copper luxury color palette
+- Inspired by premium skincare and luxury beverage brands
 
-nav{
-  position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:9;
-  width:min(1180px,calc(100% - 28px));
-  display:flex;justify-content:space-between;align-items:center;
-  padding:12px 16px 12px 22px;background:rgba(18,14,10,.72);
-  backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);
-  border-radius:999px;color:white
-}
-.logo{font-size:21px}
-.navlinks{display:flex;gap:18px;align-items:center;font-size:13px}
-.navlinks a{opacity:.9}
+Hero:
+Headline: Pocket-Friendly Natural Spring Water
+Subheadline: Premium Canadian spring water designed to fit in your purse, pocket, gym bag, and everyday life.
+Buttons:
+- Buy Now
+- Wholesale
 
-.hero{
-  min-height:100vh;padding:115px 0 70px;display:grid;align-items:center;color:var(--cream);
-  background:radial-gradient(circle at 72% 22%,rgba(199,137,93,.38),transparent 34%),linear-gradient(125deg,#0d0907,#2b2019 55%,#5a3823)
-}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-h1{font-size:clamp(46px,7vw,92px);line-height:.94;font-weight:300;letter-spacing:-.04em;margin:18px 0}
-h1 em{font-style:italic;color:var(--rose)}
-.lede{font-size:clamp(16px,1.5vw,20px);color:rgba(246,239,229,.77);max-width:40rem}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.paybadges{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
-.paybadges span{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.09);border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}
-.hero-card{border-radius:34px;padding:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);box-shadow:0 50px 100px rgba(0,0,0,.35)}
-.placeholder{aspect-ratio:1.35/1;border-radius:24px;display:grid;place-items:center;text-align:center;padding:24px;background:linear-gradient(135deg,#201711,#6a4329);color:rgba(246,239,229,.9);font-family:Fraunces,serif;font-size:28px}
+Products:
+75ml - $2
+100ml - $3
+150ml - $4
 
-.strip{background:var(--ink);color:var(--cream);padding:14px 0;overflow:hidden}
-.strip div{display:flex;gap:42px;width:max-content;animation:move 28s linear infinite}
-.strip span{font-family:Fraunces,serif;font-size:20px;color:rgba(246,239,229,.75)}
-@keyframes move{to{transform:translateX(-50%)}}
+Bundle Packs:
+Travel Pack: 6 x 75ml - $8
+Pocket Pack: 12 x 75ml - $13.99
+Gym Pack: 12 x 100ml - $14.99
+Family Pack: 12 x 150ml - $15.99
 
-section{padding:86px 0}
-.head{max-width:740px;margin-bottom:40px}
-h2{font-size:clamp(34px,5vw,62px);line-height:1;font-weight:300;letter-spacing:-.035em;margin-top:14px}
-.head p{margin-top:16px;color:var(--muted);font-size:17px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:26px;box-shadow:0 25px 70px rgba(42,31,24,.07)}
-.card h3{font-size:26px;font-weight:400;margin-bottom:8px}
-.icon{width:44px;height:44px;border-radius:15px;background:linear-gradient(135deg,var(--copper),#8e5735);display:grid;place-items:center;font-weight:900;color:var(--paper);margin-bottom:14px}
+Sections:
+1. Hero
+2. Why Water Friendly
+3. Lifestyle gallery
+4. Product cards
+5. Reviews
+6. Wholesale
+7. Custom branded water
+8. Founder story
+9. FAQ
+10. Contact
 
-.shop{background:var(--paper)}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.product{background:white;border:1px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:0 24px 70px rgba(42,31,24,.08)}
-.pvisual{height:220px;background:linear-gradient(135deg,#1b130f,#5b3823);display:grid;place-items:center;color:var(--cream);font-family:Fraunces,serif;font-size:31px;text-align:center;padding:18px}
-.pbody{padding:24px}
-.price{font-family:Fraunces,serif;font-size:44px;margin:8px 0}
-.small{font-size:13px;color:var(--muted)}
-.payline{display:flex;gap:6px;flex-wrap:wrap;margin:15px 0}
-.payline span{border:1px solid var(--line);border-radius:999px;padding:6px 9px;font-size:11px;font-weight:800}
-.product .btn{width:100%}
+Payments:
+Show Apple Pay, Google Pay, Credit Card, Debit Card and Klarna badges.
 
-.photos{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.photo-card{min-height:210px;border-radius:26px;background:linear-gradient(135deg,#271d16,#704a31);display:grid;place-items:end;padding:18px;color:var(--cream);font-weight:800}
+Wholesale industries:
+- Weddings
+- Hotels
+- Salons
+- Gyms
+- Corporate Events
+- Restaurants
+- Real Estate Agents
 
-.reviews{background:var(--paper)}
-.stars{color:#ad6d3d;font-size:18px;letter-spacing:2px}
-
-.wholesale{background:linear-gradient(135deg,#120e0a,#2a1f18);color:var(--cream)}
-.wholesale .head p{color:rgba(246,239,229,.7)}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:22px;border-radius:28px}
-.form input,.form select,.form textarea{width:100%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:var(--cream);border-radius:15px;padding:14px;font-family:Inter}
-.form textarea{grid-column:1/-1;min-height:110px}
-.form .btn{grid-column:1/-1}
-
-.faq details{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:19px;margin-bottom:12px}
-.faq summary{font-weight:800;cursor:pointer}
-.faq p{margin-top:10px;color:var(--muted)}
-
-footer{background:var(--ink);color:rgba(246,239,229,.65);padding:48px 0}
-.foot{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
-.foot strong{color:var(--cream)}
-
-@media(max-width:900px){
-  .hero-grid,.grid3,.products,.form{grid-template-columns:1fr}
-  .photos{grid-template-columns:1fr 1fr}
-  .navlinks a:not(.navbuy){display:none}
-  .hero{text-align:center}
-  .actions,.paybadges{justify-content:center}
-}
-@media(max-width:560px){.photos{grid-template-columns:1fr}}
-</style>
-</head>
-
-<body>
-
-<nav>
-  <div class="logo">The Water Friendly</div>
-  <div class="navlinks">
-    <a href="#shop">Shop</a>
-    <a href="#wholesale">Wholesale</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a class="btn primary navbuy" href="#shop">Buy Now</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Premium Canadian Spring Water</div>
-      <h1>Pocket-Friendly <em>Natural</em> Spring Water</h1>
-      <p class="lede">Premium Canadian spring water designed to fit in your purse, pocket, gym bag, car cup holder, office desk and everyday life.</p>
-      <div class="actions">
-        <a href="#shop" class="btn primary">Buy Now</a>
-        <a href="#wholesale" class="btn ghost">Wholesale</a>
-      </div>
-      <div class="paybadges">
-        <span>Apple Pay</span><span>Google Pay</span><span>Credit / Debit</span><span>Klarna</span><span>Subscriptions</span>
-      </div>
-    </div>
-    <div class="hero-card">
-      <div class="placeholder">Add Hero Product Photo<br>justwater-trio.png</div>
-    </div>
-  </div>
-</header>
-
-<div class="strip">
-  <div>
-    <span>Purse Friendly</span><span>Gym Bag Ready</span><span>Wedding Ready</span><span>Office Desk Hydration</span><span>Car Cup Holder Size</span>
-    <span>Purse Friendly</span><span>Gym Bag Ready</span><span>Wedding Ready</span>
-  </div>
-</div>
-
-<section id="why">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Why Water Friendly?</div>
-      <h2>People buy the lifestyle, not just the water.</h2>
-      <p>Small premium water for moments where bulky bottles do not fit: purses, pockets, cars, gyms, offices, salons, hotels, restaurants and events.</p>
-    </div>
-    <div class="grid3">
-      <div class="card"><div class="icon">1</div><h3>Fits anywhere</h3><p>Made for purses, pockets, gym bags, car cup holders and daily carry.</p></div>
-      <div class="card"><div class="icon">2</div><h3>Premium look</h3><p>Looks clean and luxury at weddings, office desks, salons, hotels and restaurants.</p></div>
-      <div class="card"><div class="icon">3</div><h3>Natural spring water</h3><p>Simple Canadian spring water in smaller convenient sizes.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="shop" id="shop">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Buy Online</div>
-      <h2>Choose your size.</h2>
-      <p>Stripe-ready buttons for Apple Pay, Google Pay, cards and Klarna. Replace button links with your Stripe Payment Links.</p>
-    </div>
-
-    <div class="products">
-      <article class="product">
-        <div class="pvisual">75ml</div>
-        <div class="pbody">
-          <div class="eyebrow">Mini</div>
-          <h3>75ml Can</h3>
-          <div class="price">$2</div>
-          <p class="small">Best for purse, pocket, wedding table and travel packs.</p>
-          <div class="payline"><span>Apple Pay</span><span>Google Pay</span><span>Card</span><span>Klarna</span></div>
-          <a class="btn dark" href="#checkout">Buy 75ml</a>
-        </div>
-      </article>
-
-      <article class="product">
-        <div class="pvisual">100ml</div>
-        <div class="pbody">
-          <div class="eyebrow">Everyday</div>
-          <h3>100ml Can</h3>
-          <div class="price">$3</div>
-          <p class="small">Best everyday size for gym bags, offices and salons.</p>
-          <div class="payline"><span>Apple Pay</span><span>Google Pay</span><span>Card</span><span>Klarna</span></div>
-          <a class="btn dark" href="#checkout">Buy 100ml</a>
-        </div>
-      </article>
-
-      <article class="product">
-        <div class="pvisual">150ml</div>
-        <div class="pbody">
-          <div class="eyebrow">Event</div>
-          <h3>150ml Can</h3>
-          <div class="price">$4</div>
-          <p class="small">Best for hotels, restaurants, events and conferences.</p>
-          <div class="payline"><span>Apple Pay</span><span>Google Pay</span><span>Card</span><span>Klarna</span></div>
-          <a class="btn dark" href="#checkout">Buy 150ml</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="packs">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Packs & Subscriptions</div>
-      <h2>More value, more volume.</h2>
-    </div>
-    <div class="grid3">
-      <div class="card"><h3>Travel Pack</h3><p>6 × 75ml</p><div class="price">$7.99</div></div>
-      <div class="card"><h3>Pocket Pack</h3><p>12 × 75ml</p><div class="price">$13.99</div></div>
-      <div class="card"><h3>Gym Pack</h3><p>12 × 100ml</p><div class="price">$14.99</div></div>
-      <div class="card"><h3>Family Pack</h3><p>12 × 150ml</p><div class="price">$15.99</div></div>
-      <div class="card"><h3>Monthly Delivery</h3><p>Recurring case delivery every month.</p></div>
-      <div class="card"><h3>Quarterly Delivery</h3><p>Recurring case delivery every 3 months.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="photos">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Product Photos Needed</div>
-      <h2>Show the lifestyle.</h2>
-    </div>
-    <div class="photos">
-      <div class="photo-card">Water in a purse</div>
-      <div class="photo-card">Water in a gym bag</div>
-      <div class="photo-card">Water in a car cup holder</div>
-      <div class="photo-card">Water at a wedding</div>
-      <div class="photo-card">Water on an office desk</div>
-    </div>
-  </div>
-</section>
-
-<section class="reviews" id="reviews">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Customer Love</div>
-      <h2>Reviews build trust.</h2>
-      <p>Add minimum 20 reviews with customer photos, testimonials and star ratings.</p>
-    </div>
-    <div class="grid3">
-      <div class="card"><div class="stars">★★★★★</div><h3>Perfect for my purse</h3><p>“Small, clean and premium. I keep one in my bag every day.”</p></div>
-      <div class="card"><div class="stars">★★★★★</div><h3>Beautiful for events</h3><p>“Looked amazing on the wedding table. Guests noticed it.”</p></div>
-      <div class="card"><div class="stars">★★★★★</div><h3>Great for gym</h3><p>“Easy to throw in a gym bag without carrying a big bottle.”</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="wholesale" id="wholesale">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Wholesale & Corporate Orders</div>
-      <h2>Pricing available on request.</h2>
-      <p>For weddings, hotels, salons, gyms, restaurants, corporate events and custom-branded water for businesses. Minimum order quantities may apply.</p>
-    </div>
-
-    <div class="grid3" style="margin-bottom:22px">
-      <div class="card"><h3>Weddings</h3><p>Custom table water, welcome bags and luxury event service.</p></div>
-      <div class="card"><h3>Hotels & Salons</h3><p>Premium mini water for guests, rooms, lounges and waiting areas.</p></div>
-      <div class="card"><h3>Custom Branded Water</h3><p>Your logo, your event, your brand. Higher-margin custom labels.</p></div>
-    </div>
-
-    <form class="form" action="mailto:orders@thewaterfriendly.com" method="post" enctype="text/plain">
-      <input name="name" placeholder="Your name" required>
-      <input name="business" placeholder="Business name">
-      <input name="email" type="email" placeholder="Email" required>
-      <input name="phone" placeholder="Phone">
-      <select name="type">
-        <option>Wedding</option>
-        <option>Hotel</option>
-        <option>Salon / Spa</option>
-        <option>Gym</option>
-        <option>Restaurant</option>
-        <option>Corporate Event</option>
-        <option>Custom Branded Water</option>
-        <option>Retailer</option>
-      </select>
-      <input name="quantity" placeholder="Estimated quantity">
-      <textarea name="message" placeholder="Tell us what you need"></textarea>
-      <button class="btn primary" type="submit">Request Quote</button>
-    </form>
-  </div>
-</section>
-
-<section id="founder">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Founder Story</div>
-      <h2>Built for modern everyday hydration.</h2>
-      <p>The Water Friendly was created to make water easier to carry, easier to serve and more beautiful to present. Add your founder photo and short personal story here.</p>
-    </div>
-  </div>
-</section>
-
-<section class="faq" id="faq">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">FAQ</div>
-      <h2>Questions customers ask.</h2>
-    </div>
-    <details><summary>Is it natural spring water?</summary><p>Yes, it is positioned as premium Canadian natural spring water.</p></details>
-    <details><summary>Where is it sourced?</summary><p>Add your verified spring source and bottling location here.</p></details>
-    <details><summary>Is it recyclable?</summary><p>Yes, cans are designed to be recyclable. Add exact packaging details once confirmed.</p></details>
-    <details><summary>Why is the size smaller?</summary><p>It is designed to fit in purses, pockets, gym bags, cup holders, offices and events where big bottles feel inconvenient.</p></details>
-    <details><summary>Is it suitable for travel?</summary><p>Yes, it is made for everyday carry, road trips, handbags, gyms and event packs.</p></details>
-  </div>
-</section>
-
-<section id="checkout">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Payment Setup</div>
-      <h2>Ready for Stripe checkout.</h2>
-      <p>Create Stripe Payment Links for single cans, packs, subscriptions and wholesale deposits. Then replace the Buy button links with your Stripe links.</p>
-    </div>
-    <div class="grid3">
-      <div class="card"><h3>Apple Pay + Google Pay</h3><p>Shown automatically by Stripe Checkout when available on the customer device.</p></div>
-      <div class="card"><h3>Credit / Debit</h3><p>Visa, Mastercard and debit cards through Stripe Checkout.</p></div>
-      <div class="card"><h3>Klarna</h3><p>Add Klarna inside Stripe payment methods for pay-later checkout.</p></div>
-    </div>
-  </div>
-</section>
-
-<footer id="contact">
-  <div class="wrap foot">
-    <div>
-      <strong>The Water Friendly</strong>
-      <p>Email: orders@thewaterfriendly.com<br>Phone: add your phone<br>Instagram: @thewaterfriendly</p>
-    </div>
-    <div>© 2026 The Water Friendly<br>Retail · Wholesale · Events · Custom Branded Water</div>
-  </div>
-</footer>
-
-</body>
-</html>
+Responsive mobile-first design.
+Single-file HTML with embedded CSS.
